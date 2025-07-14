@@ -61,6 +61,22 @@
         echo "You are a kid";
     }
 
+    // switch => much more cleaner way to express MANY MANY else if statements
+    
+    $grade = "A";
+
+    switch ($grade) {
+        case "A":
+            echo "You did great";
+        case "B":
+            echo "You did good";
+        case "C":
+            echo "You did okay";
+        case "D":
+            echo "You did poorly";
+        case "F":
+            echo "You failed";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +99,7 @@
         <label>food: </label>
         <input type="password" name="food_item">
 
-        <input type="submit" value="Log in">
+        <input type="submit" value="Submit">
     </form>
 
 </body>
