@@ -76,6 +76,9 @@
             echo "You did poorly";
         case "F":
             echo "You failed";
+        // a fall back in case all cases don't match (like else statement)
+        default:
+            echo "{$grade} is not valid";
     }
 ?>
 
