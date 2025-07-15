@@ -134,6 +134,47 @@
     foreach($foods as $food) {
         echo $food . "<br>";
     }
+
+    // associative array = an array with key-value pairs (dicts in python)
+
+    $capitals = array(
+            "USA"=>"Washington D.C.", 
+            "Japan"=>"Tokyo", 
+            "South Korea"=>"Seoul", 
+            "India"=>"New Dehli"
+    );
+
+    // get the value for a key (USA)
+    echo $capitals["USA"] . "<br>";
+
+    // works as same with other arrays
+    // create a new key like so...
+    $capitals["Canada"] = "Ottawa";
+
+    // loop through all values and get keys and values
+    foreach ($capitals as $key => $value) {
+        echo "{$key} = {$value} <br>";
+    }
+
+    // isset() returns true if variable is declared/not null
+
+    $username = 'hemut';
+
+    if (isset($username)) {
+        echo "This variable is set";
+    } else {
+        echo "This variable is NOT set.";
+    }
+
+
+    // empty() returns true if variable is empty/NULL
+
+    if (empty($username)) {
+        echo "This variable is empty.";
+    } else {
+        echo "This variable is NOT empty.";
+    }
+
 ?>
 
 <!-- HTTP Request handling from frontend to php code -->
