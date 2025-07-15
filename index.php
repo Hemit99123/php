@@ -68,18 +68,31 @@
     switch ($grade) {
         case "A":
             echo "You did great";
+            break;
         case "B":
             echo "You did good";
+            break;
         case "C":
             echo "You did okay";
+            break;
         case "D":
             echo "You did poorly";
+            break;
         case "F":
             echo "You failed";
+            break;
         // a fall back in case all cases don't match (like else statement)
         default:
             echo "{$grade} is not valid";
     }
+
+    // for loops (similar to js)
+
+    for ($i = 0;$i < 5;$i++) {
+        echo "Hello <br>";
+    }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -104,7 +117,6 @@
 
         <input type="submit" value="Submit">
     </form>
-
 </body>
 </html>
 
