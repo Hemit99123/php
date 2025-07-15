@@ -99,12 +99,44 @@
     $counter = 1;
 
     while ($counter <= 5) {
-        $counter++;
         echo $counter;
+        $counter++;
     }
 
+    // arrays
+
+    $foods = array("Apple", "Orange", "Banana", "Coconut");
+    
+    // indexing to find an element 
+    echo $foods[0] . "<br>";
+    echo $foods[1] . "<br>";
+    echo $foods[2] . "<br>";
+    echo $foods[3] . "<br>";
+    echo $foods[4] . "<br>";
+
+
+    // set an element in an array to something else
+    $foods[0] = "Pineapple";
+
+    // adds to end of array
+    array_push($foods, "Pineapple");
+
+    // removes last element
+    array_pop($foods);
+    
+    // removes first element
+    array_shift($foods);
+
+    // reverse an array (returns the new array)
+    $reversed_foods = array_reverse($foods);
+    
+    // easier to get all elements in an array 
+    foreach($foods as $food) {
+        echo $food . "<br>";
+    }
 ?>
 
+<!-- HTTP Request handling from frontend to php code -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
