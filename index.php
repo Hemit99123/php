@@ -87,11 +87,21 @@
     }
 
     // for loops (similar to js)
-
+    // best for when you know when the loop will end
+    
     for ($i = 0;$i < 5;$i++) {
         echo "Hello <br>";
     }
 
+    // while loop (similar to js)
+    // best for when you don't know when the loop wil end
+
+    $counter = 1;
+
+    while ($counter <= 5) {
+        $counter++;
+        echo $counter;
+    }
 
 ?>
 
