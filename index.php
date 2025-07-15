@@ -106,6 +106,7 @@
     // arrays
 
     $foods = array("Apple", "Orange", "Banana", "Coconut");
+    $foods = ["Apple", "Orange", "Banana", "Coconut"];
     
     // indexing to find an element 
     echo $foods[0] . "<br>";
@@ -135,7 +136,7 @@
         echo $food . "<br>";
     }
 
-    // associative array = an array with key-value pairs (dicts in python)
+    // associative array = an array with key-value pairs (dicts in python or objects in javascript/typescript)
 
     $capitals = array(
             "USA"=>"Washington D.C.", 
