@@ -199,7 +199,13 @@
         <label>food: </label>
         <input type="password" name="food_item">
 
-        <input type="submit" value="Submit">
+        <label>payment method:</label>
+        <input type="radio" name="payment_method" value="american_express"> American Express
+        <input type="radio" name="payment_method" value="visa"> Visa
+        <input type="radio" name="payment_method" value="mastercard"> Mastercard
+        <input type="radio" name="payment_method" value="paypal"> Paypal
+
+        <input type="submit" value="Order Now">
     </form>
 </body>
 </html>
@@ -211,8 +217,10 @@
     $price = 5.99;
     $quantity = $_POST["quantity"];
     $food_item = $_POST["food_item"];
+    $payment_method = $_POST["payment_method"];
     $total = $price * $quantity;
 
     echo "You have ordered {$quantity} x {$food_item}/s <br>";
-    echo "Your total is : \${$total}";
+    echo "Your total is : \${$total} <br>";
+    echo "You have paid with {$payment_method} <br>";
 ?>
