@@ -176,6 +176,18 @@
         echo "This variable is NOT empty.";
     }
 
+    function happy_birthday($name, $age) {
+        echo "Happy Birthday! <br>";
+        echo "Have a great day! <br>";
+        echo "Enjoy your cake! {$name}<br>";
+        if ($age >= 18) {
+            echo "You are now an adult! <br>";
+        } else {
+            echo "You are still a kid! <br>";
+        }
+    }
+
+    happy_birthday("Spongbob Squarepants", 20);
 ?>
 
 <!-- HTTP Request handling from frontend to php code -->
