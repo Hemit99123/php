@@ -138,12 +138,12 @@
 
     // associative array = an array with key-value pairs (dicts in python or objects in javascript/typescript)
 
-    $capitals = array(
+    $capitals = [
             "USA"=>"Washington D.C.", 
             "Japan"=>"Tokyo", 
             "South Korea"=>"Seoul", 
             "India"=>"New Dehli"
-    );
+    ];
 
     // get the value for a key (USA)
     echo $capitals["USA"] . "<br>";
@@ -154,12 +154,12 @@
 
     // loop through all values and get keys and values
     foreach ($capitals as $key => $value) {
-        echo "{$key} = {$value} <br>";
+        echo "{$value}, {$key} <br>";
     }
 
     // isset() returns true if variable is declared/not null
 
-    $username = 'hemut';
+    $username = 'hemit';
 
     if (isset($username)) {
         echo "This variable is set";
@@ -179,7 +179,7 @@
     function happy_birthday($name, $age) {
         echo "Happy Birthday! <br>";
         echo "Have a great day! <br>";
-        echo "Enjoy your cake! {$name}<br>";
+        echo "Enjoy your cake! $name<br>";
         if ($age >= 18) {
             echo "You are now an adult! <br>";
         } else {
@@ -217,7 +217,7 @@
         <input type="radio" name="payment_method" value="mastercard"> Mastercard
         <input type="radio" name="payment_method" value="paypal"> Paypal
 
-        <input type="submit" value="Order Now">
+        <input type="submit" name="submit" value="Order Now">
     </form>
 </body>
 </html>
@@ -227,12 +227,30 @@
     // the input name is accessible server side from html code
 
     $price = 5.99;
-    $quantity = $_POST["quantity"];
     $food_item = $_POST["food_item"];
     $payment_method = $_POST["payment_method"];
+    $submit = $_POST["submit"];
+
+    // santize and validate user input
+
+    // checking if quantity is a real number
+    $quantity = filter_input(INPUT_POST, "quantity", FILTER_VALIDATE_INT);
+
     $total = $price * $quantity;
 
-    echo "You have ordered {$quantity} x {$food_item}/s <br>";
-    echo "Your total is : \${$total} <br>";
-    echo "You have paid with {$payment_method} <br>";
+    if (empty($quantity)) {
+        echo "Quantity is not a real number";
+    } 
+    
+    else if (!in_array($payment_method, ["american_express", "visa", "mastercard", "paypal"])) {
+        echo "Invalid payment method";
+    }
+    
+    // more reliable then isset() on btn name/value which can be manupliated 
+    else if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        echo "You have ordered $quantity x $food_item/s <br>";
+        echo "Your total is : \$$total <br>";
+        echo "You have paid with $payment_method <br>";
+    } 
+    
 ?>
