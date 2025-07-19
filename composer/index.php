@@ -11,6 +11,7 @@ use RandomQuotes\RandomQuotes;
 $random_quote = new RandomQuotes();
 
 // the -> operator is used to access an attribute or method in an object in PHP 
+// in this case it is a method (function)
 // (not composer-related but important in this code example)
 $quote = $random_quote->generate();
 
