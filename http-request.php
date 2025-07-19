@@ -26,8 +26,8 @@
 </html>
 
 <?php 
-    $food = $_POST["food"];
-    $quantity = $_POST["quantity"];
+    $food = filter_input(INPUT_POST, "food", FILTER_SANITIZE_SPECIAL_CHARS);
+    $quantity = filter_input(INPUT_POST, "quantity", FILTER_VALIDATE_INT);
     $price = 5.99;
 
     $total = $quantity * $price;
