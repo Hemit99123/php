@@ -20,3 +20,6 @@ echo getAllCarsInfo() . "<br>";
 
 $car01->setBrand("Honda");
 echo $car01->getBrand() . "<br>";
+
+$car01->setColor("Green");
+echo $car01->getColor() . "<br>";
