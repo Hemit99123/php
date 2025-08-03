@@ -1,7 +1,7 @@
 <?php
 // Database Handler Class
 
-namespace Oop\Classes\Dbh;
+namespace Oop\Classes;
 
 use SQLite3;
 use Exception;

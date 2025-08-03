@@ -20,7 +20,6 @@ class Signup extends Dbh {
     private function isInputValid() {
         return isset($this->username) && isset($this->password);
     }
-
     private function insertUser() {
         $query = "INSERT INTO users (username, password) VALUES (:username, :password)";
 
