@@ -1,6 +1,8 @@
 <?php
+require_once '../Classes/Dbh.php';
+require_once '../Classes/Signup.php';
 
-use Oop\Classes\Car;
+use Oop\Classes\Signup;
 
 if ($SERVER["REQUEST_METHOD"] == "POST") {
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
