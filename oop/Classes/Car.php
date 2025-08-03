@@ -7,9 +7,6 @@ class Car {
     // Properties or fields in other languages
     private $brand;
     private $color;
-    
-    // We don't want users to manupliate this property directly
-    // so we will make it private
     private $engineStatus = false;
 
     // Constructor (run when an object is created)
