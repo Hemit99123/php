@@ -39,16 +39,23 @@ class Car {
 
     public function setBrand($brand) {
         $allowedBrands = ["Toyota", "Honda", "Ford", "Chevrolet", "Nissan"];
+        // Normalize the brand name to ensure consistent casing
+        // e.g., "toyota" becomes "Toyota"
+        $normalizedBrand = ucfirst(strtolower($brand));
+
         if (in_array($brand, $allowedBrands)) {
-            $this->brand = $brand;
+            $this->brand = $normalizedBrand;
         }
     }
 
     public function setColor($color) {
         $allowedColors = ["Red", "Blue", "Green", "Black", "White"];
+        // Same logic for color normalization
+        // e.g., "red" becomes "Red"
+        $normalizedColor = ucfirst(strtolower($color));
 
         if (in_array($color, $allowedColors)) {
-            $this->color = $color;
+            $this->color = $normalizedColor;
         } 
     }
 }
