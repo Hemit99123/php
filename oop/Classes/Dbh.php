@@ -1,6 +1,8 @@
 <?php
 // Database Handler Class
 
+namespace Oop\Classes\Dbh;
+
 class Dbh {
     private $sqlite;
 
