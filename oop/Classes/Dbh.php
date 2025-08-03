@@ -3,6 +3,9 @@
 
 namespace Oop\Classes\Dbh;
 
+use SQLite3;
+use Exception;
+
 class Dbh {
     private $sqlite;
 

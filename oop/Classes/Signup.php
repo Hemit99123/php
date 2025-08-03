@@ -1,8 +1,10 @@
 <?php
-
 namespace Oop\Classes\Signup;
 
+require_once 'Dbh.php';
+
 use Oop\Classes\Dbh;
+use Exception;
 
 class Signup extends Dbh {
     private $username;
@@ -28,7 +30,7 @@ class Signup extends Dbh {
         $stmt->bindValue(':password', password_hash($this->password, PASSWORD_DEFAULT), SQLITE3_TEXT);
         
         if (!$stmt->execute()) {
-            throw new \Exception("Could not insert user into the database.");       
+            throw new Exception("Could not insert user into the database.");       
         }
     }
 
@@ -43,4 +45,5 @@ class Signup extends Dbh {
         $this->insertUser();
         return "User signed up successfully.";
     }
+
 }
