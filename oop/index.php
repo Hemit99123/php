@@ -18,5 +18,5 @@ $car02->toggleEngine();
 
 echo getAllCarsInfo() . "<br>";
 
-$car01->brand = "Honda";
-echo $car02->brand . "<br>";
+$car01->setBrand("Honda");
+echo $car02->getBrand() . "<br>";

@@ -5,8 +5,8 @@ namespace Oop\Classes;
 class Car {
 
     // Properties or fields in other languages
-    public $brand;
-    public $color;
+    private $brand;
+    private $color;
     
     // We don't want users to manupliate this property directly
     // so we will make it private
@@ -29,5 +29,29 @@ class Car {
         } else {
             $this->engineStatus = false;
         }
+    }
+
+    // Getter and Setter methods (debateable)
+    public function getBrand() {
+        return $this->brand;
+    }
+
+    public function getColor() {
+        return $this->color;
+    }
+
+    public function setBrand($brand) {
+        $allowedBrands = ["Toyota", "Honda", "Ford", "Chevrolet", "Nissan"];
+        if (in_array($brand, $allowedBrands)) {
+            $this->brand = $brand;
+        }
+    }
+
+    public function setColor($color) {
+        $allowedColors = ["Red", "Blue", "Green", "Black", "White"];
+
+        if (in_array($color, $allowedColors)) {
+            $this->color = $color;
+        } 
     }
 }
