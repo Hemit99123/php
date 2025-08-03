@@ -14,6 +14,11 @@ class Signup extends Dbh {
     }
 
     // Private methods only accessible within this class (not even child classes)
+
+    private function isInputValid() {
+        return isset($this->username) && isset($this->password);
+    }
+
     private function insertUser() {
         $query = "INSERT INTO users (username, password) VALUES (:username, :password)";
 
@@ -27,9 +32,9 @@ class Signup extends Dbh {
         }
     }
 
-    private function signUpUser() {
+    public function signUpUser() {
         // Error handlers
-        if (empty($this->username) || empty($this->password)) {
+        if ($this->isInputValid()) {
             header("Location: " . $_SERVER["DOCUMENT_ROOT"] . "/index.php");
             die();
         } 
