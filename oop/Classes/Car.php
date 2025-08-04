@@ -1,6 +1,6 @@
 <?php
 
-namespace Oop\Classes;
+namespace OOP\Classes;
 
 class Car {
 
