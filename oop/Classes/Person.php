@@ -7,6 +7,12 @@ class Person {
     private $age;
     private $sex;
 
+    public function __construct($name, $age, $sex) {
+        $this->setName($name);
+        $this->setAge($age);
+        $this->setSex($sex);
+    }
+
     // Setter methods 
     public function setName($name) {
         $this->name = $name;
@@ -24,13 +30,7 @@ class Person {
             return false;
         }
     }
-
-    public function __construct($name, $age, $sex) {
-        $this->setName($name);
-        $this->setAge($age);
-        $this->setSex($sex);
-    }
-
+    
     // Getter methods
     public function getName() {
         return $this->name;
