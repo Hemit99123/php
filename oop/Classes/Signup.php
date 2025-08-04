@@ -1,9 +1,9 @@
 <?php
-namespace Oop\Classes\Signup;
+namespace OOP\Classes\Signup;
 
 require_once 'Dbh.php';
 
-use Oop\Classes\Dbh;
+use OOP\Classes\Dbh;
 use Exception;
 
 class Signup extends Dbh {
