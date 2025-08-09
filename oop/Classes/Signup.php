@@ -6,6 +6,8 @@ require_once 'Dbh.php';
 use OOP\Classes\Dbh;
 use Exception;
 
+// Don't use inheritance, only use for AS IS relationships not for reusing code 
+
 class Signup extends Dbh {
     private $username;
     private $password;
