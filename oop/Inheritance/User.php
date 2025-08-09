@@ -5,6 +5,7 @@ class User
     protected string $id;
     protected string $name;
     protected string $password;
+    protected string $role;
 
     // Simple in-memory mock "database"
     protected static array $users = [];
