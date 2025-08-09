@@ -2,12 +2,12 @@
 
 class User 
 {
-    private string $id;
-    private string $name;
-    private string $password;
+    protected string $id;
+    protected string $name;
+    protected string $password;
 
-    // Simple in-memory "database"
-    private static array $users = [];
+    // Simple in-memory mock "database"
+    protected static array $users = [];
 
     public function __construct(string $id, string $name, string $password)
     {
@@ -40,14 +40,5 @@ class User
             }
         }
         echo "Login failed. Invalid username or password.\n";
-    }
-
-    // Debug function to see stored users
-    public static function listUsers(): void
-    {
-        echo "Current users in memory:\n";
-        foreach (self::$users as $user) {
-            echo "- {$user->name} (id: {$user->id})\n";
-        }
     }
 }
