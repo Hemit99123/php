@@ -35,6 +35,8 @@ class Phone implements IDevice
 
 // Completely different logic from the above logic
 
+// The echo statements are just placeholders, it will be different in production
+
 class Computer implements IDevice 
 {
     private function lock()
