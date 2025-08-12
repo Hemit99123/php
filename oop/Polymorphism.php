@@ -2,44 +2,60 @@
 
 interface IDevice
 {
+    private function lock(): void;
+    private function unlock(): void;
     public function open(): void;
     public function close(): void;
-    public function lock(): void;
 }
 
 class Phone implements IDevice
 {
-  public function open()
-  {
-    echo "Open 📱" 
-  }
+    private function lock()
+    {
+        echo "Locked 📱";
+    } 
 
-  public function close()
-  {
-    echo "Close 📱" 
-  }
+    private function unlock()
+    {
+        echo "Unlocked 📱";
+    }
 
-  public function lock()
-  {
-    echo "Lock 📱"
-  }
+    public function open()
+    {
+        $this->unlock();
+        echo "Open 📱";
+    }
+
+    public function close()
+    {
+        $this->lock();
+        echo "Close 📱";
+    }
 }
 
-// completely different logic from the above logic
+// Completely different logic from the above logic
+
 class Computer implements IDevice 
 {
-  public function open()
-  {
-    echo "Open 👨🏿‍💻" 
-  }
+    private function lock()
+    {
+        echo "Locked 👨🏿‍💻";
+    }
 
-  public function close()
-  {
-    echo "Close 👨🏿‍💻" 
-  }
+    private function unlock()
+    {
+        echo "Unlocked 👨🏿‍💻";
+    }
 
-  public function lock()
-  {
-    echo "Lock 👨🏿‍💻"
-  }
+    public function open()
+    {
+        $this->unlock();
+        echo "Open 👨🏿‍💻";
+    }
+
+    public function close()
+    {
+        $this->lock();
+        echo "Close 👨🏿‍💻";
+    }
 }
