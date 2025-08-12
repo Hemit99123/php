@@ -1,12 +1,8 @@
 <?php 
 
-interface IDevice
-{
-    private function lock(): void;
-    private function unlock(): void;
-    public function open(): void;
-    public function close(): void;
-}
+include_once __DIR__ . "/Interfaces/IDevice.php";
+
+use App\Interfaces\IDevice;
 
 class Phone implements IDevice
 {
